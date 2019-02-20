@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import api from './api/api.js'
 import TestComponent from'./components/testComponent'
+import PostPhoto from './components/postPhoto/postPhoto';
 
 class App extends Component {
   state = {
@@ -36,6 +37,7 @@ class App extends Component {
           </a>
         </header>
         <TestComponent   check={this.state.check}/>
+        <PostPhoto />
       </div>
     );
   }
