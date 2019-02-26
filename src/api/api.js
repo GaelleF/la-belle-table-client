@@ -10,7 +10,11 @@ const uploadPhoto = (formEvent) => fetch(path('/photos/upload'),
     body:  new FormData(formEvent.target)})
   .then(res=>res.text())
 
+const getPhotos = () => fetch(path('/photos'))
+  // .then(res=>console.log('getPhotos', res))
+
 export default {
   getCheck,
   uploadPhoto,
+  getPhotos,
 }

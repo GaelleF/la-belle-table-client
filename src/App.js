@@ -1,43 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component, setState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import api from './api/api.js'
 import TestComponent from'./components/testComponent'
 import PostPhoto from './components/postPhoto/postPhoto';
+import ShowPhotos from './components/showPhotos/showPhotos';
+import { Router } from '@reach/router';
+import Header from'./components/header/header';
 
 class App extends Component {
   state = {
-    check: 'ko'
+    check: 'ko',
+    photos: undefined
   }
   
-
   componentDidMount(){
     console.log('state : ',this.state)
     api.getCheck()
     .then(res => this.setState({check:res}))
     .catch((error => console.log('ERROR : ', error)))   
+
+    api.getPhotos()
+    .then(res=> {
+      console.log('getPhotos app : ', res)
+      return this.setState({photos:res.body.getReader()})
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-         
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <TestComponent   check={this.state.check}/>
-        <PostPhoto />
+      <Header />
+      <Router className="main">
+        <ShowPhotos path="/" photos={this.state.photos}/>
+        <PostPhoto path="postPhoto"/>
+        <TestComponent  path="authentification"  check={this.state.check}/>
+      </Router>
       </div>
     );
   }

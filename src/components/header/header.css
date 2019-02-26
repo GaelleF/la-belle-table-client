@@ -1,0 +1,13 @@
+.header__main {
+    height: 50px;
+    background: linear-gradient(150deg, violet, purple) ;
+}
+
+#header__nav {
+    color: whitesmoke;
+
+}
+.header__item{
+		color: whitesmoke; 
+		padding:10px;
+}

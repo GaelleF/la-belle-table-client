@@ -13,7 +13,7 @@ const PostPhoto = () => {
     api.uploadPhoto(event)
     .then(res => console.log('response upload ', res))
   }  
-
+  
   const handleChange = (event) => {
     console.log("new file ", event.target.files[0])
     setFile(URL.createObjectURL(event.target.files[0]))
@@ -30,7 +30,7 @@ const PostPhoto = () => {
         </label>
       <input type="submit" value="submit" />
       </form>
-      <div ><img src={file} id="postPhoto__preview__image" alt="preview"/>{file}</div>
+      <div ><img src={file} id="postPhoto__preview__image" alt="preview"/></div>
     </div>
   )
 }
