@@ -1,34 +1,13 @@
 import React, { useState,useEffect  } from 'react';
+import api from '../../api/api'
 
 
 const DisplayPhoto = ({photo}) => {
-  let scr
-  const [imageUrl, setImageUrl]=useState('')
-  console.log('Display1: ', photo.photos)
-  
-  const uint2Url= async(uintArray) => {
-    const res= await uintArray.photos.read()
- 
-    console.log('Display2: ', res.value,'...')
-    let blob= new Blob(res.value, {type:"image/jpg"})
-    var urlCreator = window.URL || window.webkitURL;
-    const imageUrlTemp = await urlCreator.createObjectURL( blob );
-    //console.log('Display3: ',res.read())
-    console.log("imageUrl : ", imageUrlTemp)
-    scr= imageUrlTemp
-    //setImageUrl(imageUrlTemp)
-  //.then((imageUrlTemp)=> setImageUrl(imageUrlTemp))
-}
-
-useEffect (()=>{
-  setImageUrl(uint2Url(photo))
-})
-
+  console.log('DISPLAY components : ', photo)
   return (
-    <div>
-      {/*file*/}
-      "This is displayPhoto !!!"
-      <img src= {scr} alt="IMAGE "/>
+    <div className="">
+      "This is displayPhoto 2 !!!"
+      <img src= {api.downloadPhoto(photo)} alt="IMAGE "/>
     </div>
   )
 }

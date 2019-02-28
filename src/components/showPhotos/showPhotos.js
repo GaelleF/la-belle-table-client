@@ -3,36 +3,20 @@ import api from '../../api/api'
 import './showPhotos.css'
 import DisplayPhotos from '../displayPhoto/displayPhoto'
 
-const ShowPhotos = (photos) => {
-
-  //const [photos,setphotos] = useState()
-  console.log('photo  :  ', photos)
-  useEffect(() => {
-    // api.getPhotos()
-    // .then(res=> {
-    //   console.log('getPhotos show : ', res)
-    //   //return setphotos(res)
-    })
-
-    // const displayPhotos = (photos) => {
-    //   //return photos.map(photo => {
-    //     console.log('F : ' , photos)
-    //    // return "test"
-    //  // })
-    // }
-  //})
+const ShowPhotos = ({photos}) => {
 
   const displayPhotos = (photos) => {
     console.log('photo : display : ',photos)
-    if (photos.photos !== undefined){
-    // return photos.map(photo => {
-    //   console.log('F : ' , photos)
-      return  (<DisplayPhotos photo={photos} />)
-  
+    if (photos !== undefined){
+      return photos.map(photo => {
+        console.log('F : ' , photo)
+        return  (<DisplayPhotos key={photo} photo={photo} />) 
+      })
     }
-    return "test"
+    return "loading fail"
   }
-
+  
+  
   return (
     <div >
       {displayPhotos(photos)}

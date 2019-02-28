@@ -18,13 +18,14 @@ class App extends Component {
     console.log('state : ',this.state)
     api.getCheck()
     .then(res => this.setState({check:res}))
-    .catch((error => console.log('ERROR : ', error)))   
-
-    api.getPhotos()
+    .catch((error => console.log('ERROR : ', error))) 
+    
+    api.getUrlPhotos()
     .then(res=> {
-      console.log('getPhotos app : ', res)
-      return this.setState({photos:res.body.getReader()})
-    })
+      const urlPhotos = JSON.parse(res).map(image => image.url)
+      console.log('getPhotosUrl app : ', urlPhotos)
+      return this.setState({photos:urlPhotos})
+    }) 
   }
 
   render() {
