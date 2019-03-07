@@ -1,13 +1,72 @@
+/*https://www.colourlovers.com/palette/482774/dream_magnet*/
+
+@font-face {
+    font-family:"punkLand";
+    src: url("../../public/fonts/PunkLand.ttf") format("truetype")
+}
+
 .header__main {
-    height: 50px;
-    background: linear-gradient(150deg, violet, purple) ;
+    height: 120px;
+    /* background: linear-gradient(150deg, #00DFFC, #008C9E) ; */
+    /*box-shadow: 0 10px 20px 10px lightgrey 0 12px 9px -5px rgba(0, 0, 0, 1);*/
+    box-shadow: inset 0 0 20px 10px #00B4CC;
+    
+    background-color: #00DFFC;
+    margin:5px;
+    padding:10px;
+   display:flex;
+   align-items: flex-end;
+   justify-content: space-between;
+    
 }
 
 #header__nav {
-    color: whitesmoke;
+
+    display:flex;
+    height:50px;
+    color:black;
+    text-decoration:none;
+   /* position: relative ;
+    left: 20px;
+    bottom: 20px; */
+    /* vertical-align: bottom; */
+    
 
 }
+
+#logo__picture {
+    height: 100px;
+    /* margin:10px;
+    border:1px red solid; */
+}
+
+#logo__name {
+    margin:auto;
+    margin-left:10px;
+    height: 80px;
+}
+
+#header__sort-by-tag__list {
+
+  list-style-type:none;
+  display:flex;
+}
+
+.header__sort-by-tag__item {
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header_emoticone{
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+
 .header__item{
-		color: whitesmoke; 
-		padding:10px;
+		color: black; 
+    padding:10px;
+    text-decoration:none;
 }

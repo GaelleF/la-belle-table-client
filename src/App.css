@@ -3,6 +3,7 @@
   background:url("./public/black_paper/black_paper.png");
   min-height:120vh;
   color: white;
+  padding:2px;
 }
 
 .main {

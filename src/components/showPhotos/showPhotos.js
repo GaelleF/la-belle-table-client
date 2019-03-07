@@ -18,7 +18,7 @@ const ShowPhotos = ({photos}) => {
   
   
   return (
-    <div >
+    <div className="show-photos__container">
       {displayPhotos(photos)}
     </div>
   )
