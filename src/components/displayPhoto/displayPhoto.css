@@ -1,0 +1,130 @@
+
+@import url("https://fonts.googleapis.com/css?family=Dancing+Script" );
+
+
+.display-photo__element {
+    /*background:url("../../public/colorful-abstract-background-1084082_1280.jpg");*/
+    /*height: 70vw;*/
+    background-color: #008C9E;
+    border-radius: 10px;
+    width:65vw;
+  
+    margin: 20px;
+   vertical-align: middle;
+   padding:20px;
+}
+
+#display-photo__header {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.display-photo__image { 
+    max-width: 60vw;
+    max-height: 70vh;
+    z-index: 10;
+    box-shadow: 0 0 10px 
+     black;
+}
+
+.display-photo__image__tag {
+  position: absolute;
+  width: 50vw;
+  z-index: -1000;
+  top:50%;
+  left : 50%;
+  color : whitesmoke;
+  text-align: center ;
+  transform:translate(-50%,-50%);
+  text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.display-photo__image__author {
+  position: absolute;
+  z-index: 1000;
+  bottom:5%;
+  right : 5%;
+  text-align: right ;
+  transform:translate(-50%,-50%);
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  
+}
+
+.post-photo__preview {
+  display:none;
+}
+
+
+
+.display-photo__image-container {
+  /* margin:auto ;
+  width: auto;
+  height: auto;
+  text-align: center; */
+  position:relative;
+}
+
+#display-photo__tag__list {
+    /*margin:auto;*/
+    list-style-type:none;
+    display:flex;
+  }
+  
+  .display-photo__tag__item {
+    padding:10px;
+    display: flex;
+    /* flex-direction: column; */
+  
+  }
+
+  #display-photo__title{
+      margin:auto;
+  }
+  
+  .display-photo_emoticone{
+    margin-bottom: 5px;
+    padding:10px;
+    background: rgba(0,0,0,0.4);
+    font-size:1.5em;
+    border: none;
+    border-radius:100%;
+    
+
+  }
+
+  @keyframes growTag {
+    0% {
+       font-size:2em;
+       left:50%;
+       z-index:1000;
+    }
+    60%{
+      font-size:5em;
+      left : 40%;
+      z-index:1000;
+      text-shadow: 0 0 40px whitesmoke;
+    }
+
+    100%{
+      transform:
+      translate3d(15rem,-8rem,0)
+      rotate(-40deg)
+      skewX(50deg)
+      scale(1.5);
+      text-shadow: 0 0 20px whitesmoke;
+      opacity: 0;
+      /* z-index:-1000; */
+    }
+  }
+
+  /* animation : text grow */
+  .animation_tag {
+    /* animation-duration:1s;
+    animation-name: growtag; */
+    animation: growTag 3s;
+  }
+

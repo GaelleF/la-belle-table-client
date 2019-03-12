@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+/*<link href="https://fonts.googleapis.com/css?family=Calligraffitti|Open+Sans|Roboto" rel="stylesheet"></link>
+font-family: 'Roboto', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Calligraffitti', cursive;*/
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
