@@ -7,12 +7,25 @@ import PostPhoto from './components/postPhoto/postPhoto';
 import ShowPhotos from './components/showPhotos/showPhotos';
 import { Router } from '@reach/router';
 import Header from'./components/header/header';
+import * as firebase from 'firebase'
 
 class App extends Component {
   state = {
     check: 'ko',
     photos: undefined
   }
+
+
+  config = {
+    apiKey: "AIzaSyAElJGokZs5lu9j0RKHpl6XqeLjvVPueY0",
+    authDomain: "lateatevening.firebaseapp.com",
+    databaseURL: "https://lateatevening.firebaseio.com",
+    projectId: "lateatevening",
+    storageBucket: "lateatevening.appspot.com",
+    messagingSenderId: "893285356337"
+  };
+  
+
   
   componentDidMount(){
     console.log('state : ',this.state)
@@ -29,6 +42,7 @@ class App extends Component {
   }
 
   render() {
+    firebase.initializeApp(this.config);
     return (
       <div className="App">
       <Header />
