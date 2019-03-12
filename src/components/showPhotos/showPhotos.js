@@ -10,7 +10,7 @@ const ShowPhotos = ({photos}) => {
     if (photos !== undefined){
       return photos.map(photo => {
         console.log('F : ' , photo)
-        return  (<DisplayPhotos key={photo} photo={photo} />) 
+        return  (<DisplayPhotos key={photo.url} photo={photo} />) 
       })
     }
     return "loading fail"

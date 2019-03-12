@@ -22,8 +22,8 @@ class App extends Component {
     
     api.getUrlPhotos()
     .then(res=> {
-      const urlPhotos = JSON.parse(res).map(image => image.url)
-      console.log('getPhotosUrl app : ', urlPhotos)
+      const urlPhotos = JSON.parse(res)//.map(image => image.url)
+      console.log('getPhotosUrl app : ', JSON.parse(res))
       return this.setState({photos:urlPhotos})
     }) 
   }

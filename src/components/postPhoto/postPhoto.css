@@ -1,3 +1,38 @@
 #postPhoto__preview__image {
     max-height: 200px;
 }
+#post-photo__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:30px;
+    font-size: 1.2em;
+}
+
+#new-file {
+    margin:auto;
+    background-color: #005F6B;
+    padding: 5px;
+    color:white;
+    border-radius: 5px;
+    font-size: 0.85em;
+  
+}
+#post-photo__form__title {
+    margin:auto;
+    padding:5px;
+    margin-top:15px;
+    font-size: 0.85em;
+}
+#post-photo__form__submit {
+    margin:auto;
+    padding:5px;
+    margin-top:15px;
+    background-color: #005F6B;
+    padding: 10px;
+    color:white;
+    border-color: #008C9E;
+    font-size: 1.2em;
+    border-radius:10px;
+    margin-bottom: 20px;
+}
