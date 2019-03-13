@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../api/api';
 import './displayPhoto.css'
-
+import * as firebase from 'firebase'
 
 const DisplayPhoto = ({ photo }) => {
+
+  const [url, setUrl] = useState()
+  const storage = firebase.storage();
+  const pathReference = storage.ref('storage-photos/'+photo.idPhoto).getDownloadURL()
+  .then((url) =>  setUrl(url)); //src image
 
   const icones = [
     { id: 1, icone: '0x1F37B', name: 'amateur de bières' },
@@ -13,7 +18,7 @@ const DisplayPhoto = ({ photo }) => {
     { id: 5, icone: '0x1F37E', name: 'GRAND LUXE' },
   ]
 
-  console.log('DISPLAY components : ', photo)
+  console.log('DISPLAY components : ', pathReference)
   let icone = String.fromCodePoint(0x1F37B)
 
   const [compteurs, setCompteurs] = useState([0, 0, 0, 0, 0, 0])
@@ -45,7 +50,7 @@ const DisplayPhoto = ({ photo }) => {
       </div>
       <div className="display-photo__image-container">
         <span className={`display-photo__image__tag ${animation ? 'animation_tag' : ''}`} >{tagPopup}</span>
-        <img className="display-photo__image" src={api.downloadPhoto(photo.url)} alt="IMAGE " />
+        <img className="display-photo__image" src={url} alt="IMAGE " />
         <span className="display-photo__image__author" >{photo.author}</span>
       </div>
     </div>
